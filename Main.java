@@ -11,7 +11,8 @@ class SumTask extends java.util.concurrent.RecursiveTask<Long>
     }
 
     @Override
-    protected Long compute() {
+    protected Long compute()
+    {
         if (end - start <= 100) return java.util.stream.IntStream.range(start, end).mapToLong(this.list::get).sum();
         final var middle = (end + start) / 2;
         final var sumTask = java.util.List.of(new SumTask(this.list, start, middle), new SumTask(this.list, middle, end));
