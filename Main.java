@@ -1,9 +1,9 @@
 class SumTask extends java.util.concurrent.RecursiveTask<Long>
 {
-    final java.util.List<Long> list;
-    final int start, end;
+    private final java.util.List<Long> list;
+    private final int start, end;
 
-    SumTask(java.util.List<Long> list, int start, int end)
+    public SumTask(java.util.List<Long> list, int start, int end)
     {
         this.list = list;
         this.start = start;
