@@ -7,6 +7,7 @@ public class Executor
 	fixed.shutdown();
 	final var scheduled = java.util.concurrent.Executors.newSingleThreadScheduledExecutor();
         scheduled.scheduleAtFixedRate(() -> System.out.println("fuck"), 0, 5, java.util.concurrent.TimeUnit.SECONDS);
-	//scheduled.shutdown();
+	scheduled.setContinueExistingPeriodicTasksAfterShutdownPolicy(true);
+	scheduled.shutdown();
     }
 }    
