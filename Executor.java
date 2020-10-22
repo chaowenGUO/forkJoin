@@ -6,7 +6,7 @@ public class Executor
         System.out.println(fixed.submit(() -> 1).get());
 	fixed.shutdown();
 	final var scheduled = java.util.concurrent.Executors.newSingleThreadScheduledExecutor();
-        scheduled.scheduleAtFixedRate(() -> System.out.println("fuck"), 0, 5, TimeUnit.SECONDS);
+        scheduled.scheduleAtFixedRate(() -> System.out.println("fuck"), 0, 5, java.util.concurrent.TimeUnit.SECONDS);
 	scheduled.shutdown();
     }
 }    
