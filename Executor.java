@@ -9,9 +9,9 @@ public class Executor
 	scheduled.setContinueExistingPeriodicTasksAfterShutdownPolicy(true);
         scheduled.scheduleAtFixedRate(() -> System.out.println("fuck"), 0, 5, java.util.concurrent.TimeUnit.SECONDS);
 	scheduled.shutdown();*/
-	ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+	final var executor = new java.util.concurrent.ScheduledThreadPoolExecutor(1);
         executor.setContinueExistingPeriodicTasksAfterShutdownPolicy(true);
-        executor.scheduleAtFixedRate(() -> System.out.println("Hello, World!"), 0L, 1L, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(() -> System.out.println("Hello, World!"), 0L, 1L, java.util.concurrent.TimeUnit.SECONDS);
         executor.shutdown();
     }
 }    
